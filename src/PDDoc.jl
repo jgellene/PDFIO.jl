@@ -394,7 +394,7 @@ function pdDocGetOutline(doc::PDDoc)
     catalog = pdDocGetCatalog(doc)
     cosDoc = pdDocGetCosDoc(doc)
     tocobj = cosDocGetObject(cosDoc, catalog, cn"Outlines")
-    tocobj === nothing && return nothing
+    tocobj === CosNull && return nothing
     return PDOutline(doc, tocobj)
 end
 
